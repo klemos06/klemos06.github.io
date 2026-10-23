@@ -8,3 +8,11 @@
 @media(max-width:850px){.photo-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.photo-gallery{grid-template-columns:1fr}.gallery-image{height:340px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Fill the four project photo cards, turning portrait hardware shots sideways. */
+.project-image.photo-thumb{container-type:size}
+.project-image.photo-thumb img{padding:0;object-fit:cover}
+.project-image.photo-thumb img.photo-sideways{width:100cqh;height:100cqw;max-width:none;flex:none;transform:rotate(90deg)}
+.project-image.photo-thumb img.photo-counterclockwise{transform:rotate(-90deg)}
+.project-image.photo-thumb:hover img.photo-sideways{transform:rotate(90deg) scale(1.025)}
+.project-image.photo-thumb:hover img.photo-counterclockwise{transform:rotate(-90deg) scale(1.025)}
